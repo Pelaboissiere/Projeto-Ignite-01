@@ -1,4 +1,4 @@
-import { format, formatDistanceToNow } from 'date-fns'
+import { format } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
 import styles from './Post.module.css'
@@ -12,12 +12,13 @@ interface Author {
     avatarUrl: string;
 }
 
-interface Content {
+export interface Content {
     type: 'paragraph' | 'link';
     content: string;
 }
 
-interface PostProps {
+export interface PostProps {
+    id:number;
     author: Author;
     publishedAt: Date;
     content: Content[];
